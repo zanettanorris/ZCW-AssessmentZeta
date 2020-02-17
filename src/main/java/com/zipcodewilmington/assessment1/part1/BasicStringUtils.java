@@ -9,15 +9,33 @@ public class BasicStringUtils {
      * @return string with identical content, and the first character capitalized
      */
     public static String camelCase(String str) {
-        return null;
-    }
+        //public static String capitalize(String str) {
+         //   String[] words = str.split(" ");
+          //  StringBuilder sb = new StringBuilder();
+
+          //  for (String s: words) {
+           //     if (!s.equals("")) {
+           //         sb.append(Character.toUpperCase(s.charAt(0)));
+             //       sb.append(s.substring(1));
+           //     }
+          //      sb.append(" ");
+          //  }
+
+       //     return sb.toString().trim();}
+        String output = str.substring(0, 1).toUpperCase() + str.substring(1);
+return output;}
 
     /**
      * @param str string input from client
      * @return string with identical contents, in the reverse order
      */
     public static String reverse(String str) {
-        return null;
+
+            String output = "";
+            for (int i = str.length() - 1; i >= 0; i--) {
+                output = output + str.charAt(i);
+            }
+            return output;
     }
 
     /**
@@ -25,8 +43,13 @@ public class BasicStringUtils {
      * @return string with identical contents, in reverse order, with first character capitalized
      */
     public static String reverseThenCamelCase(String str) {
-        return null;
-    }
+
+        String reverse = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reverse = reverse + str.charAt(i);
+        }
+        String  output = reverse.substring(0, 1).toUpperCase() + reverse.substring(1);
+        return output;}
 
 
     /**
