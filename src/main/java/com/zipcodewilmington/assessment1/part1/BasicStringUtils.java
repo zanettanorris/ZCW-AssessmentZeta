@@ -9,21 +9,10 @@ public class BasicStringUtils {
      * @return string with identical content, and the first character capitalized
      */
     public static String camelCase(String str) {
-        //public static String capitalize(String str) {
-         //   String[] words = str.split(" ");
-          //  StringBuilder sb = new StringBuilder();
 
-          //  for (String s: words) {
-           //     if (!s.equals("")) {
-           //         sb.append(Character.toUpperCase(s.charAt(0)));
-             //       sb.append(s.substring(1));
-           //     }
-          //      sb.append(" ");
-          //  }
-
-       //     return sb.toString().trim();}
         String output = str.substring(0, 1).toUpperCase() + str.substring(1);
-return output;}
+        return output;
+    }
 
     /**
      * @param str string input from client
@@ -31,11 +20,11 @@ return output;}
      */
     public static String reverse(String str) {
 
-            String output = "";
-            for (int i = str.length() - 1; i >= 0; i--) {
-                output = output + str.charAt(i);
-            }
-            return output;
+        String output = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            output = output + str.charAt(i);
+        }
+        return output;
     }
 
     /**
@@ -48,16 +37,18 @@ return output;}
         for (int i = str.length() - 1; i >= 0; i--) {
             reverse = reverse + str.charAt(i);
         }
-        String  output = reverse.substring(0, 1).toUpperCase() + reverse.substring(1);
-        return output;}
-
+        String output = reverse.substring(0, 1).toUpperCase() + reverse.substring(1);
+        return output;
+    }
 
     /**
      * @param str a string input from user
      * @return string with identical contents excluding first and last character
      */
     public static String removeFirstAndLastCharacter(String str) {
-        return null;
+
+        String removeFirstAndLastCharacter = str.substring(1, str.length() - 1);
+        return removeFirstAndLastCharacter;
     }
 
     /**
@@ -65,6 +56,18 @@ return output;}
      * @return string with identical characters, each with opposite casing
      */
     public static String invertCasing(String str) {
-        return null;
+
+        char[] charArray = str.toCharArray();
+
+        for (int i = 0; i < charArray.length; i++) {
+            if (Character.isUpperCase(charArray[i])) {
+                charArray[i] = Character.toLowerCase(charArray[i]);
+            } else if (Character.isLowerCase(charArray[i])) {
+                charArray[i] = Character.toUpperCase(charArray[i]);
+            }
+        }
+        str = new String(charArray);
+        return str;
     }
 }
+
