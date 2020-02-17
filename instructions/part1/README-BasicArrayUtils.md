@@ -39,7 +39,9 @@
 
 
 
-
+    public static String getFirstElement(String[] array) {
+        return array[0];
+    }
 
 
 
