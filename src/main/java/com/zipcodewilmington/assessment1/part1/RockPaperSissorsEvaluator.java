@@ -13,7 +13,15 @@ public class RockPaperSissorsEvaluator {
      * @return the respective winning move
      */
     public String getWinningMove(String handSign) {
-        return null;
+
+        if (handSign == "rock") {
+            return "paper";
+        } else if
+            (handSign == "paper")
+            return "scissor";
+    else{
+            return "rock";
+        }
     }
 
     /**
@@ -21,8 +29,17 @@ public class RockPaperSissorsEvaluator {
      * @return the respective losing move
      */
     public String getLosingMove(String handSign) {
-        return null;
+
+        if (handSign == "paper") {
+            return "rock";
+        } else if
+        (handSign == "scissor")
+            return "paper";
+        else{
+            return "scissor";
+        }
     }
+
 
     /**
      * @param handSignOfPlayer1 a string representative of a hand sign of a player
@@ -30,6 +47,27 @@ public class RockPaperSissorsEvaluator {
      * @return a string representative of the winning hand sign between the two players
      */
     public String getWinner(String handSignOfPlayer1, String handSignOfPlayer2) {
-        return null;
-    }
+       String result ="";
+        if (handSignOfPlayer1 == handSignOfPlayer2)
+            result = "Tie";
+        else if (handSignOfPlayer1 == "rock") {
+            if (handSignOfPlayer2 == "scissor")
+                result = "rock";
+        } else if (handSignOfPlayer1 == "rock") {
+            if (handSignOfPlayer2 == "paper")
+                result = "paper";
+        } else if (handSignOfPlayer1 == "paper") {
+            if (handSignOfPlayer2 == "scissor")
+                result = "scissors";
+        } else if (handSignOfPlayer1 == "paper") {
+            if (handSignOfPlayer2 == "rock")
+                result = "paper";
+        } else if (handSignOfPlayer1 == "scissor") {
+            if (handSignOfPlayer2 == "paper")
+                result = "scissors";
+        } else if (handSignOfPlayer1 == "scissor") {
+            if (handSignOfPlayer2 == "rock")
+                result = "rock";
+        }
+    return result;}
 }
