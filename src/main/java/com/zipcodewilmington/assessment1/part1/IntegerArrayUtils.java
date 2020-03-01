@@ -33,7 +33,7 @@ return sum;}
         int sum = 0;
         for (int i = 0; i < intArray.length; i++)
             sum +=  intArray[i];
-        double average = sum / (intArray.length-1);
+        double average = sum / (intArray.length);
     return average;}
 
 }
